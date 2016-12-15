@@ -8,47 +8,47 @@ override_dh_auto_clean:
 	$(RM) -rf bin; \
 
 override_dh_auto_build:
-  cp release.cfg  extrafpc.cfg
+	cp release.cfg extrafpc.cfg ;\
 	cd src ;\
-	lazbuild -B --build-mode=Release ovoplayer.lpi \
-	cd tools/ovoplayerctrl ;\
+	lazbuild -B --build-mode=Release ovoplayer.lpi ;\
+	cd $(CURDIR)/tools/ovoplayerctrl ;\
 	lazbuild -B --build-mode=Release ovoplayerctrl.lpi
 
 override_dh_auto_install:
-  install -d -m 755 $(ROOT)/usr/bin
-  install -d -m 755 $(ROOT)/usr/share
-  install -d -m 755 $(ROOT)/usr/share/doc
-  install -d -m 755 $(ROOT)/usr/share/doc/ovoplayer
-  install -d -m 755 $(ROOT)/usr/share/ovoplayer
-  install -d -m 755 $(ROOT)/usr/share/applications
-  install -d -m 755 $(ROOT)/usr/share/pixmaps
-  install -d -m 755 $(ROOT)/usr/share/man
-  install -d -m 755 $(ROOT)/usr/share/man/man1
-  install -d -m 755 $(ROOT)/usr/share/locale
-  install -d -m 755 $(ROOT)/usr/share/lintian
-  install -d -m 755 $(ROOT)/usr/share/lintian/overrides
+	install -d -m 755 $(ROOT)/usr/bin ;\
+	install -d -m 755 $(ROOT)/usr/share ;\
+	install -d -m 755 $(ROOT)/usr/share/doc  ;\
+	install -d -m 755 $(ROOT)/usr/share/doc/ovoplayer ;\
+	install -d -m 755 $(ROOT)/usr/share/ovoplayer ;\
+	install -d -m 755 $(ROOT)/usr/share/applications ;\
+	install -d -m 755 $(ROOT)/usr/share/pixmaps ;\
+	install -d -m 755 $(ROOT)/usr/share/man ;\
+	install -d -m 755 $(ROOT)/usr/share/man/man1 ;\
+	install -d -m 755 $(ROOT)/usr/share/locale ;\
+	install -d -m 755 $(ROOT)/usr/share/lintian ;\
+	install -d -m 755 $(ROOT)/usr/share/lintian/overrides  ;\
 
-	install -m 755 lazpaint/deb/lazpaint_linux64/usr/bin/lazpaint $(ROOT)/usr/bin
-	install -d -m 755 $(ROOT)/usr/share/applications
-	install -m 755 packages/ovoplayer.desktop $(ROOT)/usr/share/applications
-	install -m 644 images/logo.png $(ROOT)/usr/share/pixmaps/ovoplayer.png
-	install -m 644 images/nocover.png $(ROOT)/usr/share/ovoplayer  
-	install -m 644 images/volume-slider.png $(ROOT)/usr/share/ovoplayer  
-	install -m 644 images/volume-slider-mask.png $(ROOT)/usr/share/ovoplayer  
-	install -s -m 644 bin/linux/ovoplayer $(ROOT)/usr/bin	  
-  install -s -m 644 bin/linux/ovoplayerctrl $(ROOT)/usr/bin	    
+	install -m 755 lazpaint/deb/lazpaint_linux64/usr/bin/lazpaint $(ROOT)/usr/bin ;\
+	install -d -m 755 $(ROOT)/usr/share/applications ;\
+	install -m 755 packages/ovoplayer.desktop $(ROOT)/usr/share/applications ;\
+	install -m 644 images/logo.png $(ROOT)/usr/share/pixmaps/ovoplayer.png ;\
+	install -m 644 images/nocover.png $(ROOT)/usr/share/ovoplayer   ;\
+	install -m 644 images/volume-slider.png $(ROOT)/usr/share/ovoplayer   ;\
+	install -m 644 images/volume-slider-mask.png $(ROOT)/usr/share/ovoplayer   ;\
+	install -s -m 644 bin/linux/ovoplayer $(ROOT)/usr/bin	   ;\
+	install -s -m 644 bin/linux/ovoplayerctrl $(ROOT)/usr/bin	     ;\
   
-  install -m 644 packages/copyright $(ROOT)/usr/share/doc/ovoplayer
-  install -m 644 packages/lintian-overrides $(ROOT)/usr/share/lintian/overrides/ovoplayer
+	install -m 644 packages/copyright $(ROOT)/usr/share/doc/ovoplayer  ;\
+	install -m 644 packages/lintian-overrides $(ROOT)/usr/share/lintian/overrides/ovoplayer ;\
 
-  gzip -c --best DOC/manpages/ovoplayerctrl.1 > $(ROOT)/usr/share/man/man1/ovoplayerctrl.1.gz
-  chmod 0644 $(ROOT)/usr/share/man/man1/ovoplayerctrl.1.gz
+	gzip -c --best DOC/manpages/ovoplayerctrl.1 > $(ROOT)/usr/share/man/man1/ovoplayerctrl.1.gz  ;\
+	chmod 0644 $(ROOT)/usr/share/man/man1/ovoplayerctrl.1.gz ;\
 
-  gzip -c --best DOC/manpages/ovoplayer.1 > $(ROOT)/usr/share/man/man1/ovoplayer.1.gz
-  chmod 0644 $(ROOT)/usr/share/man/man1/ovoplayer.1.gz
+	gzip -c --best DOC/manpages/ovoplayer.1 > $(ROOT)/usr/share/man/man1/ovoplayer.1.gz  ;\
+	chmod 0644 $(ROOT)/usr/share/man/man1/ovoplayer.1.gz  ;\
 
-  gzip -c --best $PACKAGES_DIR/changelog > $(ROOT)/usr/share/doc/ovoplayer/changelog.gz
-  chmod 0644 $(ROOT)/usr/share/doc/ovoplayer/changelog.gz
+	gzip -c --best $PACKAGES_DIR/changelog > $(ROOT)/usr/share/doc/ovoplayer/changelog.gz  ;\
+	chmod 0644 $(ROOT)/usr/share/doc/ovoplayer/changelog.gz ;\
 
 %:
 	dh $@
