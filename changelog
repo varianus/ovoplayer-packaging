@@ -1,5 +1,6 @@
-ovoplayer (1.3.0); urgency=low
+ovoplayer (1.3.0) xenial; urgency=low
 
-  * Automatic Playlist. Create a playlist with extensive filtering/search capabilities
+  * Automatic Playlist. Create a playlist with extensive
+    filtering/search capabilities
 
- -- Marco Caselli <marcocas@gmail.com>  Thu, 15 Dec 2016 19:40:59 +0100
+ -- Marco Caselli <marcocas@gmail.com>  Thu, 15 Dec 2016 19:50:00 +0100
