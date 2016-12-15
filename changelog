@@ -1,6 +1,5 @@
 ovoplayer (1.3.0); urgency=low
 
   * Automatic Playlist. Create a playlist with extensive filtering/search capabilities
-  * Add support for GStreamer 1.0, if installed
 
  -- Marco Caselli <marcocas@gmail.com>  2016-12-15
