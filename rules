@@ -10,6 +10,7 @@ override_dh_auto_clean:
 override_dh_auto_build:
 	cp release.cfg extrafpc.cfg ;\
 	cd src ;\
+	lazbuild --add-package components\mcaselli.lpk ;\
 	lazbuild -B --build-mode=Release ovoplayer.lpi ;\
 	cd $(CURDIR)/tools/ovoplayerctrl ;\
 	lazbuild -B --build-mode=Release ovoplayerctrl.lpi
@@ -27,8 +28,6 @@ override_dh_auto_install:
 	install -d -m 755 $(ROOT)/usr/share/locale ;\
 	install -d -m 755 $(ROOT)/usr/share/lintian ;\
 	install -d -m 755 $(ROOT)/usr/share/lintian/overrides  ;\
-
-	install -m 755 lazpaint/deb/lazpaint_linux64/usr/bin/lazpaint $(ROOT)/usr/bin ;\
 	install -d -m 755 $(ROOT)/usr/share/applications ;\
 	install -m 755 packages/ovoplayer.desktop $(ROOT)/usr/share/applications ;\
 	install -m 644 images/logo.png $(ROOT)/usr/share/pixmaps/ovoplayer.png ;\
