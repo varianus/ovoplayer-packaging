@@ -10,7 +10,7 @@ override_dh_auto_clean:
 override_dh_auto_build:
 	cp release.cfg extrafpc.cfg ;\
 	cd src ;\
-	lazbuild --add-package components\mcaselli.lpk ;\
+	lazbuild --add-package components/mcaselli.lpk ;\
 	lazbuild -B --build-mode=Release ovoplayer.lpi ;\
 	cd $(CURDIR)/tools/ovoplayerctrl ;\
 	lazbuild -B --build-mode=Release ovoplayerctrl.lpi
