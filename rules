@@ -29,24 +29,24 @@ override_dh_auto_install:
 	install -d -m 755 $(ROOT)/usr/share/lintian ;\
 	install -d -m 755 $(ROOT)/usr/share/lintian/overrides  ;\
 	install -d -m 755 $(ROOT)/usr/share/applications ;\
-	install -m 755 packages/ovoplayer.desktop $(ROOT)/usr/share/applications ;\
-	install -m 644 images/logo.png $(ROOT)/usr/share/pixmaps/ovoplayer.png ;\
-	install -m 644 images/nocover.png $(ROOT)/usr/share/ovoplayer   ;\
-	install -m 644 images/volume-slider.png $(ROOT)/usr/share/ovoplayer   ;\
-	install -m 644 images/volume-slider-mask.png $(ROOT)/usr/share/ovoplayer   ;\
-	install -s -m 644 bin/linux/ovoplayer $(ROOT)/usr/bin	   ;\
-	install -s -m 644 bin/linux/ovoplayerctrl $(ROOT)/usr/bin	     ;\
+	install -m 755 $(CURDIR)/packages/ovoplayer.desktop $(ROOT)/usr/share/applications ;\
+	install -m 644 $(CURDIR)/images/logo.png $(ROOT)/usr/share/pixmaps/ovoplayer.png ;\
+	install -m 644 $(CURDIR)/images/nocover.png $(ROOT)/usr/share/ovoplayer   ;\
+	install -m 644 $(CURDIR)/images/volume-slider.png $(ROOT)/usr/share/ovoplayer   ;\
+	install -m 644 $(CURDIR)/images/volume-slider-mask.png $(ROOT)/usr/share/ovoplayer   ;\
+	install -s -m 644 $(CURDIR)/bin/linux/ovoplayer $(ROOT)/usr/bin	   ;\
+	install -s -m 644 $(CURDIR)/bin/linux/ovoplayerctrl $(ROOT)/usr/bin	     ;\
   
-	install -m 644 packages/copyright $(ROOT)/usr/share/doc/ovoplayer  ;\
-	install -m 644 packages/lintian-overrides $(ROOT)/usr/share/lintian/overrides/ovoplayer ;\
+	install -m 644 $(CURDIR)/packages/copyright $(ROOT)/usr/share/doc/ovoplayer  ;\
+	install -m 644 $(CURDIR)/packages/lintian-overrides $(ROOT)/usr/share/lintian/overrides/ovoplayer ;\
 
-	gzip -c --best DOC/manpages/ovoplayerctrl.1 > $(ROOT)/usr/share/man/man1/ovoplayerctrl.1.gz  ;\
+	gzip -c --best $(CURDIR)/DOC/manpages/ovoplayerctrl.1 > $(ROOT)/usr/share/man/man1/ovoplayerctrl.1.gz  ;\
 	chmod 0644 $(ROOT)/usr/share/man/man1/ovoplayerctrl.1.gz ;\
 
-	gzip -c --best DOC/manpages/ovoplayer.1 > $(ROOT)/usr/share/man/man1/ovoplayer.1.gz  ;\
+	gzip -c --best $(CURDIR)/DOC/manpages/ovoplayer.1 > $(ROOT)/usr/share/man/man1/ovoplayer.1.gz  ;\
 	chmod 0644 $(ROOT)/usr/share/man/man1/ovoplayer.1.gz  ;\
 
-	gzip -c --best $PACKAGES_DIR/changelog > $(ROOT)/usr/share/doc/ovoplayer/changelog.gz  ;\
+	gzip -c --best $(CURDIR)/packages/changelog > $(ROOT)/usr/share/doc/ovoplayer/changelog.gz  ;\
 	chmod 0644 $(ROOT)/usr/share/doc/ovoplayer/changelog.gz ;\
 
 %:
