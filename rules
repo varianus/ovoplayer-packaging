@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-ROOT = $(CURDIR)/debian
+ROOT = $(CURDIR)/debian/ovoplayer
 BASEDIR = $(CURDIR)
 
 override_dh_auto_clean:
@@ -11,11 +11,11 @@ override_dh_auto_clean:
 override_dh_auto_build:
 	cp release.cfg extrafpc.cfg ;\
 	cd $(BASEDIR)/src/components ;\
-	lazbuild --add-package ./mcaselli.lpk
+	lazbuild mcaselli.lpk
 	cd $(BASEDIR)/src ;\
 	lazbuild -B --build-mode=Release ovoplayer.lpi
-	cd $(BASEDIR)/tools/ovoplayerctrl
-	lazbuild -B --build-mode=Release ovoplayerctrl.lpi
+#	cd $(BASEDIR)/tools/ovoplayerctrl
+#	lazbuild -B --build-mode=Release ovoplayerctrl.lpi
 
 override_dh_auto_install:
 	install -d -m 755 $(ROOT)/usr/bin
