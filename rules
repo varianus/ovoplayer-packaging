@@ -13,7 +13,7 @@ override_dh_auto_build:
 	cd $(BASEDIR)/src/components ;\
 	lazbuild mcaselli.lpk
 	cd $(BASEDIR)/src ;\
-	lazbuild -B ovoplayer.lpi
+	lazbuild -B --build-mode=Release ovoplayer.lpi
 #	cd $(BASEDIR)/tools/ovoplayerctrl
 #	lazbuild -B ovoplayerctrl.lpi
 
