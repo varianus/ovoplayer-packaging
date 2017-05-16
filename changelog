@@ -1,4 +1,10 @@
-ovoplayer (1.3.0) UNSTABLE; urgency=low
+ovoplayer (1.4.0) UNSTABLE; urgency=low
+
+  * Equalizer
+
+ -- Marco Caselli <marcocas@gmail.com>  Thu, 15 Dec 2016 13:00:00 +0100
+
+ovoplayer (1.3.0) stable; urgency=low
 
   * Automatic Playlist. Create a playlist with extensive 
     filtering/search capabilities
