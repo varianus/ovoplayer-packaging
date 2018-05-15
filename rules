@@ -2,6 +2,7 @@
 
 ROOT = $(CURDIR)/debian/ovoplayer
 BASEDIR = $(CURDIR)
+HOME = $(BASEDIR)/fakehome
 
 override_dh_auto_clean:
 	cd src; \
@@ -9,8 +10,7 @@ override_dh_auto_clean:
 	$(RM) -rf bin; \
 
 override_dh_auto_build:
-	mkdir $(BASEDIR)\fakehome ;\
-	HOME = $(BASEDIR)\fakehome ;\  
+	mkdir $(HOME) ;\
 	cp release.cfg extrafpc.cfg ;\
 	cd $(BASEDIR)/src/components ;\
 	lazbuild mcaselli.lpk
