@@ -34,7 +34,7 @@ override_dh_auto_install:
 	install -d -m 755 $(ROOT)/usr/share/lintian/overrides
 	install -d -m 755 $(ROOT)/usr/share/applications
 	install -m 755 $(BASEDIR)/packages/ovoplayer.desktop $(ROOT)/usr/share/applications ;\
-	install -m 644 $(BASEDIR)/images/logo.png $(ROOT)/usr/share/pixmaps/ovoplayer.png ;\
+	install -m 644 $(BASEDIR)/images/ovoplayer.xpm $(ROOT)/usr/share/pixmaps/ovoplayer.xpm ;\
 	install -m 644 $(BASEDIR)/images/nocover.png $(ROOT)/usr/share/ovoplayer   ;\
 	install -s -m 644 $(BASEDIR)/bin/linux/ovoplayer $(ROOT)/usr/bin	   ;\
 #	install -s -m 644 $(BASEDIR)/bin/linux/ovoplayerctrl $(ROOT)/usr/bin	     ;\
