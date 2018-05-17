@@ -1,6 +1,7 @@
 ovoplayer (1.4.0) UNSTABLE; urgency=low
 
   * Equalizer
+  * Support for Vlc 3.0
 
  -- Marco Caselli <marcocas@gmail.com>  Thu, 15 Dec 2016 13:00:00 +0100
 
