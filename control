@@ -1,23 +1,28 @@
-Source: ovotext
+Source: ovoplayer
 Maintainer: marco caselli <marcocas@gmail.com>
-Section: editors
+Section: sound
 Priority: optional
-Standards-Version: 0.1.0
+Standards-Version: 1.4.0
 Build-Depends: fpc, lazarus, lcl, lcl-utils, debhelper (>= 8), libdbus-glib-1-dev
 
-Package: ovotext
-Version: 0.1.0
-Section: editors
+Package: ovoplayer
+Version: 1.4.0
+Section: sound
 Priority: optional
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends},
+Depends: ${shlibs:Depends}, ${misc:Depends}, mplayer(>= 1.0) | libvlc5 | libgstreamer0.10-0| libgstreamer1.0-0
 Maintainer: marco caselli <marcocas@gmail.com>
-Description: ovotext is a simple text editor written in Lazarus/FreePascal.
+Description: Free multiplatform audio player
  .
- Some features:
+ Features:
+   * Can play and read music tag from MP3, FLAC, WMA, APE and OGG files.
+   * Cross platform - work on Linux and Windows.
+   * Multiple audio engines supported.
+   * Can import M3U, ASX, PLS, XSPF, BSPL, WPL playlist.
  .
-  * Tabbed editor.
-  * Syntax highligthing for a lot of programming languages and file formats.
-  * Undo/Redo support.
-  * Print with syntax highligthing.
-
+ Supported engines.
+   * VLC - preferred choice, tested on Linux and Windows.
+   * MPlayer - play almost any format, tested on Linux and Windows.
+   * XINE - almost complete (some performance issues), tested on Linux.
+   * BASS - complete.
+   * GStreamer - complete.
