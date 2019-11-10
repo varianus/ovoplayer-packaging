@@ -1,6 +1,6 @@
-# ovoplayer-packaging
+# ovotext-packaging
 
-This repository contains the files needed to automate daily builds of [OvoPlayer](https://github.com/varianus/ovoplayer) on [Launchpad](https://launchpad.net/ovoplayer)
+This repository contains the files needed to automate daily builds of [OvoText](https://github.com/varianus/ovotext) on [Launchpad](https://launchpad.net/ovotext)
 
 
-The resulting build are available at this [PPA](https://launchpad.net/~varianus/+archive/ubuntu/ovoplayer)
+The resulting build are available at this [PPA](https://launchpad.net/~varianus/+archive/ubuntu/ovotext)

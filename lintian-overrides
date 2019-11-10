@@ -1,3 +1,2 @@
-ovoplayer: hardening-no-relro usr/bin/ovoplayer
-ovoplayer: statically-linked-binary usr/bin/ovoplayerctrl
+ovoplayer: hardening-no-relro usr/bin/ovotext
 ovoplayer: extended-description-contains-empty-paragraph
